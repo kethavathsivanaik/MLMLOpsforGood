@@ -1,0 +1,9 @@
+namespace:
+  name: ml-train
+ 
+image:
+  repository: 202011501/ml-model-train
+  tag: latest
+
+replicaCount: 1
+
