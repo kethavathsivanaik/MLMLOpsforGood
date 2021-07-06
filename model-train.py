@@ -10,22 +10,6 @@ from keras.layers import MaxPooling2D
 from keras.layers import Flatten
 from keras.layers import Dense
 
-# Dowloading DataSet from S3
-
-import boto3
-import os
-
-def downloadDirectoryFroms3(bucketName, remoteDirectoryName):
-    s3_resource = boto3.resource('s3')
-    bucket = s3_resource.Bucket(bucketName)
-    for obj in bucket.objects.filter(Prefix = remoteDirectoryName):
-        if not os.path.exists(os.path.dirname(obj.key)):
-            os.makedirs(os.path.dirname(obj.key))
-        bucket.download_file(obj.key, obj.key)
-
-downloadDirectoryFroms3("mlopsforgood-dataset","dataset")
-
-
 
 # Preprocessing the Training set
 train_data = ImageDataGenerator(rescale = 1./255,
