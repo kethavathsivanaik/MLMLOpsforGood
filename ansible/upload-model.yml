@@ -1,0 +1,14 @@
+- hosts: localhost
+  tasks:
+  - include_vars: secure.yml
+  - name: Upload Model
+    amazon.aws.aws_s3:
+      bucket: mlopsforgood-models
+      object: BT_MODEL.h5
+      src: ./../BT_MODEL.h5
+      mode: put
+      aws_access_key: "{{ aws_access_key }}"
+      aws_secret_key: "{{ aws_secret_key }}"
+      region: "ap-south-1"
+
+

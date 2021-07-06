@@ -1,0 +1,25 @@
+- hosts: localhost
+  tasks:
+  - include_vars: secure.yml
+  - name: Download DS form S3
+    aws_s3:
+      bucket: mlopsforgood-dataset
+      object: dataset.tar.gz 
+      dest: ./../dataset.tar.gz
+      mode: get
+      aws_access_key: "{{ aws_access_key }}"
+      aws_secret_key: "{{ aws_secret_key }}"
+      region: "ap-south-1"
+  - name: Recursively change ownership of a directory
+    file:
+      path: ./../dataset
+      state: directory
+    when: false
+
+  - name: Extract
+    unarchive: 
+      src: ./../dataset.tar.gz
+      dest: /train 
+
+
+
