@@ -1,5 +1,3 @@
-BUCKET_NAME = 
-
 from keras.preprocessing.image import ImageDataGenerator
 import numpy as np
 from keras.models import load_model
