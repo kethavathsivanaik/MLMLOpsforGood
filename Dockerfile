@@ -8,5 +8,6 @@ RUN apt-get update
 RUN apt-get install net-tools -y
 RUN chmod +x entrypoint.sh
 
-CMD [ "./entrypoint.sh" ]
+ENTRYPOINT /train/entrypoint.sh ; /bin/bash ; 
+
 

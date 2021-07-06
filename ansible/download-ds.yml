@@ -10,11 +10,6 @@
       aws_access_key: "{{ aws_access_key }}"
       aws_secret_key: "{{ aws_secret_key }}"
       region: "ap-south-1"
-  - name: Recursively change ownership of a directory
-    file:
-      path: ./../dataset
-      state: directory
-    when: false
 
   - name: Extract
     unarchive: 

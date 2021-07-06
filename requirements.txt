@@ -1,6 +1,8 @@
 ansible==2.10.3
 numpy==1.16.3
 tensorflow==2.3.0
-keras==2.2.4
+tensorflow-gpu==2.3.0
+keras==2.4.1
 gdown==3.12.2
+boto3==1.17.105
 
