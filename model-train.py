@@ -67,7 +67,7 @@ model.compile(optimizer="adam",
 model.fit(x=training_set, validation_data=test_set, epochs=100)
 
 # Saving Model
-model.save("BT_MODEL.h5")
+model.save("BT_MODEL-v1.h5")
 
 
 print("Model Successfully created..")
